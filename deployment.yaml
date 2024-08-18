@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-flask-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: calculator-flask
+  template:
+    metadata:
+      labels:
+        app: calculator-flask
+    spec:
+      containers:
+      - name: calculator-flask
+        image: yash5090/calculator-flask:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
