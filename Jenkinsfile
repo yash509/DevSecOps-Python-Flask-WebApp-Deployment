@@ -261,7 +261,7 @@ pipeline {
         stage('Deploy to Docker Container'){
             steps{
                 //dir('BMI Calculator (JS)') {
-                    sh 'docker run -d --name calculator-flask -p 3000:3000 yash5090/calculator-flask:latest' 
+                    sh 'docker run -d --name calculator-flask -p 5000:5000 yash5090/calculator-flask:latest' 
                 //}
             }
         }
